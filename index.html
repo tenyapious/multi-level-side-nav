@@ -3,25 +3,29 @@
   <head>
     <link rel="stylesheet" href="style.css" />
     <title>Sandbox</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js"></script>
   </head>
   <body>
     <div class="container">
       <div class="carousel">
         <div class="slider">
-          <section>Content for section 1</section>
-          <section>Content for section 2</section>
-          <section>Content for section 3</section>
-          <section>Content for section 4</section>
-          <section>Content for section 5</section>
-        </div>
-        <div class="controls">
-          <span class="arrow prev">prev</span>
-          <span class="arrow next">next</span>
+          <section class="parents">
+            <button class="open-child">Open child</button>
+          </section>
+          <section class="children">
+            <button class="open-grand-child">Open grand-child</button>
+            <button class="go-back">go back</button>
+          </section>
+          <section class="grand-children">
+            <button class="go-back">go back</button>
+          </section>
         </div>
       </div>
+      <button class="open-nav">Open nav</button>
     </div>
 
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.1/gsap.min.js"></script> -->
+    <script src="gsap.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

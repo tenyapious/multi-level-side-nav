@@ -1,40 +1,39 @@
 const slider = document.querySelector(".slider");
-const carousel = document.querySelector(".carousel");
+const parents = document.querySelector(".parents");
+const children = document.querySelector(".children");
+const grandChildren = document.querySelector(".grand-children");
 
-const prev = document.querySelector(".prev");
-const next = document.querySelector(".next");
+const openNav = document.querySelector(".open-nav");
+const openChild = document.querySelector(".open-child");
+const openGrandChild = document.querySelector(".open-grand-child");
 
-let direction;
-
-prev.addEventListener("click", function () {
-  if (direction === -1) {
-    slider.appendChild(slider.firstElementChild);
-    direction = 1;
-  }
-  carousel.style.justifyContent = "flex-end";
-  slider.style.transform = "translate(20%)";
+openNav.addEventListener("click", function () {
+  slider.style.transform = "translateX(100%)";
 });
 
-next.addEventListener("click", function () {
-  if (direction === 1) {
-    slider.prepend(slider.lastElementChild);
-  }
-  direction = -1;
-  carousel.style.justifyContent = "flex-start";
-  slider.style.transform = "translate(-20%)";
+openChild.addEventListener("click", function () {
+  gsap.to(".parents", {
+    duration: 0.5,
+    ease: "power1.out",
+    x: "100%",
+    onComplete: function () {
+      // parents.style.display = "none";
+      alert("complete");
+    },
+    onStart: function () {
+      // children.style.display = "block";
+      alert("start");
+    },
+  });
 });
 
-slider.addEventListener("transitionend", function () {
-  if (direction === -1) {
-    slider.appendChild(slider.firstElementChild);
-  } else if (direction === 1) {
-    slider.prepend(slider.lastElementChild);
-  }
-
-  slider.style.transition = "none";
-  slider.style.transform = "translate(0)";
-
-  setTimeout(function () {
-    slider.style.transition = "all .5s";
+openGrandChild.addEventListener("click", function () {
+  gsap.to([parents, children], {
+    duration: 0.1,
+    ease: "power1.out",
+    x: "100%",
+    onStart: function () {
+      children.style.display = "block";
+    },
   });
 });
