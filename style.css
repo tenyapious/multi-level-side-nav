@@ -5,20 +5,25 @@
   outline: none;
 }
 
+ul {
+  list-style-type: none;
+}
+
 .carousel {
   width: 300px;
   height: 300px;
   border: 2px solid green;
   position: relative;
-  left: 700px;
+  left: 350px;
 }
 
 .slider {
+  display: none;
   border: 1px solid #000;
   position: absolute;
   top: 0;
   right: 100%;
-  transition: transform 1s;
+  /* transition: transform 1s; */
   /* transform: translateX(100%); */
 }
 
@@ -26,7 +31,7 @@
   width: 300px;
   height: 300px;
   border: 1px solid red;
-  transition: transform 1s;
+  /* transition: transform 1s; */
   /* display: none; */
   /* transform: translateX(100%); */
 }
@@ -38,8 +43,8 @@
   right: 100%;
   top: 0;
   border: 1px solid red;
-  /* display: none; */
-  transition: transform 1s;
+  display: none;
+  /* transition: transform 1s; */
   /* transform: translateX(100%); */
   /* transform: translateX(200%); */
 }
@@ -52,6 +57,6 @@
   top: 0;
   border: 1px solid red;
   display: none;
-  transition: transform 1s;
+  /* transition: transform 1s; */
   /* transform: translateX(100%); */
 }
