@@ -42,14 +42,14 @@ openGrandChild.addEventListener("click", function () {
   hideChildren = true;
   grandChildren.style.display = "block";
 
-  gsap.to(grandChildren, {
-    duration: 1,
-    x: "100%",
-  });
+  // gsap.to(grandChildren, {
+  //   duration: 1,
+  //   x: "100%",
+  // });
 
-  gsap.to(children, {
+  gsap.to([children, grandChildren], {
     duration: 1,
-    x: "200%",
+    x: "+=100%",
     onComplete: function () {
       children.style.display = "none";
     },
