@@ -21,7 +21,7 @@ ul {
   width: 100%;
   height: 100vh;
   position: relative;
-  /* background-color: lightblue; */
+  background-color: lightblue;
 }
 
 .container-dark-cover {

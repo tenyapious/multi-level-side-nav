@@ -15,9 +15,12 @@ let viewPortWidth =
 console.log(viewPortWidth);
 console.log(document.querySelector(".parents").clientWidth);
 
-let tl = gsap.timeline({ defaults: { duration: 0.5, ease: "power1.out" } });
+let tl = gsap.timeline({
+  defaults: { duration: 0.5, ease: "power1.power1.inOut" },
+});
 
-let openNavTl = tl
+let openNavTl = gsap
+  .timeline({ defaults: { duration: 0.5, ease: "power1.inOut" } })
   .set([slider, containerDarkCover], { display: "block" })
   .to(slider, { xPercent: 100 })
   .to(
