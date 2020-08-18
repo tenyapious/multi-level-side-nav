@@ -11,15 +11,291 @@
     <div class="container">
       <!-- <div class="carousel"> -->
       <nav class="nav">
-        <ul class="parents">
-          <button class="open-child">Open child</button>
+        <ul class="nav-items parents">
+          <li class="nav-item" data-link="p1">
+            <a href="#" class="nav-link">Cars</a>
+            <button class="child-link">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fff"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-chevron-right"
+                aria-hidden="true"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">Cuban Cigar</a>
+          </li>
+          <li class="nav-item" data-link="p2">
+            <a href="#" class="nav-link">Watches</a>
+            <button class="child-link">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#fff"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-chevron-right"
+                aria-hidden="true"
+              >
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </li>
         </ul>
         <ul class="children">
-          <button class="open-grand-child">Open grand-child</button>
-          <button class="go-back">go back</button>
+          <li class="child" data-link="p1">
+            <ul class="nav-items">
+              <li class="nav-item heading">
+                <a href="#" class="nav-link">Cars</a>
+                <button class="go-back">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#fff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-chevron-right"
+                    aria-hidden="true"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+              </li>
+              <li class="nav-item" data-link="p1-c1">
+                <a href="#" class="nav-link">Bugatti</a>
+                <button class="grand-child-link">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#fff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-chevron-right"
+                    aria-hidden="true"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Chevi Camero</a>
+              </li>
+              <li class="nav-item" data-link="p1-c2">
+                <a href="#" class="nav-link">Ferarri</a>
+                <button class="grand-child-link">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#fff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-chevron-right"
+                    aria-hidden="true"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+              </li>
+            </ul>
+          </li>
+          <!-- --------------------------- -->
+          <li class="child" data-link="p2">
+            <ul class="nav-items">
+              <li class="nav-item heading">
+                <a href="#" class="nav-link">Watches</a>
+                <button class="go-back">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#fff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-chevron-right"
+                    aria-hidden="true"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+              </li>
+              <li class="nav-item" data-link="p2-c1">
+                <a href="#" class="nav-link">Rollex</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Cartier</a>
+              </li>
+              <li class="nav-item" data-link="p2-c1">
+                <a href="#" class="nav-link">Hublot</a>
+              </li>
+            </ul>
+          </li>
+          <!-- --------------------------- -->
+          <li class="child" data-link="p3">
+            <ul class="nav-items">
+              <li class="nav-item heading">
+                <a href="#" class="nav-link">parent 3</a>
+                <button class="go-back">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#fff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-chevron-right"
+                    aria-hidden="true"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+              </li>
+              <li class="nav-item" data-link="p3-c1">
+                <a href="#" class="nav-link">child 3</a>
+                <button class="grand-child-link">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#fff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-chevron-right"
+                    aria-hidden="true"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">child 3</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link" data-link="p2-c2">child 3</a>
+                <button class="grand-child-link">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#fff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-chevron-right"
+                    aria-hidden="true"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+              </li>
+            </ul>
+          </li>
         </ul>
+        <!-- Grand children -->
+        <!-- -------------------------- -->
         <ul class="grand-children">
-          <button class="go-back">go back</button>
+          <li class="grand-child" data-link="p1-c1">
+            <ul class="nav-items">
+              <li class="nav-item heading">
+                <a href="#" class="nav-link">Bugatti</a>
+                <button class="go-back">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#fff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-chevron-right"
+                    aria-hidden="true"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Divo</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">chiron</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Veyron</a>
+              </li>
+            </ul>
+          </li>
+          <li class="grand-child" data-link="p1-c2">
+            <ul class="nav-items">
+              <li class="nav-item heading">
+                <a href="#" class="nav-link">Ferarri</a>
+                <button class="go-back">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#fff"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-chevron-right"
+                    aria-hidden="true"
+                  >
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
+                </button>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">La Ferarri</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Enzo</a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Spider</a>
+              </li>
+            </ul>
+          </li>
         </ul>
       </nav>
       <!-- </div> -->

@@ -3,17 +3,14 @@ const slider = document.querySelector(".nav");
 // const children = document.querySelector(".children");
 // const grandChildren = document.querySelector(".grand-children");
 const openNav = document.querySelector(".open-nav");
-const openChild = document.querySelector(".open-child");
-const openGrandChild = document.querySelector(".open-grand-child");
+const openChild = document.querySelector(".child-link");
+const openGrandChild = document.querySelector(".grand-child-link");
 const containerDarkCover = document.querySelector(".container-dark-cover");
 
 let viewPortWidth =
   window.innerWidth ||
   document.documentElement.clientWidth ||
   document.body.clientWidth;
-
-console.log(viewPortWidth);
-console.log(document.querySelector(".parents").clientWidth);
 
 let tl = gsap.timeline({
   defaults: { duration: 0.5, ease: "power1.power1.inOut" },
@@ -52,20 +49,31 @@ function transitioner(show, hide, direction = "+=100") {
   }
 }
 
-openChild.addEventListener("click", function () {
-  transitioner(this.parentElement.nextElementSibling, this.parentElement);
+gsap.utils.toArray(".child-link").forEach((childLink) => {
+  childLink.addEventListener("click", function () {
+    transitioner(
+      this.closest(".parents").nextElementSibling,
+      this.closest(".parents")
+    );
+  });
 });
 
-openGrandChild.addEventListener("click", function () {
-  transitioner(this.parentElement.nextElementSibling, this.parentElement);
+gsap.utils.toArray(".grand-child-link").forEach((grandChildLink) => {
+  grandChildLink.addEventListener("click", function () {
+    transitioner(
+      this.closest(".children").nextElementSibling,
+      this.closest(".children")
+    );
+  });
 });
 
 gsap.utils.toArray(".go-back").forEach((goBack) => {
   goBack.addEventListener("click", function () {
-    transitioner(
-      this.parentElement.previousElementSibling,
-      this.parentElement,
-      "-=100"
-    );
+    let goBackParent;
+    if (this.closest(".children")) goBackParent = this.closest(".children");
+    else {
+      goBackParent = this.closest(".grand-children");
+    }
+    transitioner(goBackParent.previousElementSibling, goBackParent, "-=100");
   });
 });
