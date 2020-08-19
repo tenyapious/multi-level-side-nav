@@ -39,7 +39,6 @@ containerDarkCover.addEventListener("click", function () {
 
 function transitioner(show, hide, direction = "+=100") {
   if (!tl.isActive()) {
-    console.log(show[0]);
     tl.set(show, { display: "block" }).to([show[0], hide], {
       xPercent: direction,
       onComplete: function () {
