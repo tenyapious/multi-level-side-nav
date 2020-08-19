@@ -9,12 +9,7 @@ const containerDarkCover = document.querySelector(".container-dark-cover");
 
 let childrensContainersChildToShow = "",
   grandchildrensContainersChildToShow = "",
-  previousContainersChildToHide = "";
-let childrenContainerBool = false;
-let viewPortWidth =
-  window.innerWidth ||
-  document.documentElement.clientWidth ||
-  document.body.clientWidth;
+  childrenContainerBool = false;
 
 let tl = gsap.timeline({
   defaults: { duration: 0.5, ease: "power1.power1.inOut" },
@@ -60,10 +55,6 @@ gsap.utils.toArray(".child-link").forEach((childLink) => {
     childrensContainersChildToShow = childrenContainer.querySelector(
       `[data-link="${this.parentElement.dataset.link}"]`
     );
-    // document.querySelectorAll('[data-genre~="horror"]');
-    // currentContainer = childrenContainer;
-    // previousContainer = parentsContainer;
-    // subNavChildContainer = correspondingSubNavContainer;
     childrenContainerBool = true;
     transitioner(
       [childrenContainer, childrensContainersChildToShow],
@@ -77,10 +68,6 @@ gsap.utils.toArray(".grand-child-link").forEach((grandChildLink) => {
     grandchildrensContainersChildToShow = grandChildrenContainer.querySelector(
       `[data-link="${this.parentElement.dataset.link}"]`
     );
-    // document.querySelectorAll('[data-genre~="horror"]');
-    // currentContainer = childrenContainer;
-    // previousContainer = parentsContainer;
-    // subNavChildContainer = correspondingSubNavContainer;
     childrenContainerBool = false;
 
     transitioner(
@@ -92,10 +79,6 @@ gsap.utils.toArray(".grand-child-link").forEach((grandChildLink) => {
 
 gsap.utils.toArray(".go-back").forEach((goBack) => {
   goBack.addEventListener("click", function () {
-    // if (this.closest(".children")) goBackParent = this.closest(".children");
-    // else {
-    //   goBackParent = this.closest(".grand-children");
-    // }
     if (childrenContainerBool)
       transitioner(
         [parentsContainer, childrensContainersChildToShow],
