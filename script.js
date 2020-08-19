@@ -11,6 +11,13 @@ let childrensContainersChildToShow = "",
   grandchildrensContainersChildToShow = "",
   childrenContainerBool = false;
 
+let viewPortHeight =
+  window.innerHeight ||
+  document.documentElement.clientHeight ||
+  document.body.clientHeight;
+
+document.documentElement.style.setProperty("--vh", `${viewPortHeight}px`);
+
 let tl = gsap.timeline({
   defaults: { duration: 0.5, ease: "power1.power1.inOut" },
 });
