@@ -18,6 +18,7 @@ let tl = gsap.timeline({
 let openNavTl = gsap
   .timeline({ defaults: { duration: 0.5, ease: "power1.inOut" } })
   .set([slider, containerDarkCover], { display: "block" })
+  .set(".container", { height: "100vh" })
   .to(slider, { xPercent: 100 })
   .to(
     ".container-cover",
