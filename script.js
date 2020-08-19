@@ -1,12 +1,16 @@
 const slider = document.querySelector(".nav");
-// const parents = document.querySelector(".parents");
-// const children = document.querySelector(".children");
-// const grandChildren = document.querySelector(".grand-children");
+const parentsContainer = document.querySelector(".parents");
+const childrenContainer = document.querySelector(".children");
+const grandChildrenContainer = document.querySelector(".grand-children");
 const openNav = document.querySelector(".open-nav");
 const openChild = document.querySelector(".child-link");
 const openGrandChild = document.querySelector(".grand-child-link");
 const containerDarkCover = document.querySelector(".container-dark-cover");
 
+let childrensContainersChildToShow = "",
+  grandchildrensContainersChildToShow = "",
+  previousContainersChildToHide = "";
+let childrenContainerBool = false;
 let viewPortWidth =
   window.innerWidth ||
   document.documentElement.clientWidth ||
@@ -40,10 +44,12 @@ containerDarkCover.addEventListener("click", function () {
 
 function transitioner(show, hide, direction = "+=100") {
   if (!tl.isActive()) {
-    tl.set(show, { display: "block" }).to([show, hide], {
+    console.log(show[0]);
+    tl.set(show, { display: "block" }).to([show[0], hide], {
       xPercent: direction,
       onComplete: function () {
         hide.style.display = "none";
+        if (direction == "-=100") show[1].style.display = "none";
       },
     });
   }
@@ -51,29 +57,57 @@ function transitioner(show, hide, direction = "+=100") {
 
 gsap.utils.toArray(".child-link").forEach((childLink) => {
   childLink.addEventListener("click", function () {
+    childrensContainersChildToShow = childrenContainer.querySelector(
+      `[data-link="${this.parentElement.dataset.link}"]`
+    );
+    // document.querySelectorAll('[data-genre~="horror"]');
+    // currentContainer = childrenContainer;
+    // previousContainer = parentsContainer;
+    // subNavChildContainer = correspondingSubNavContainer;
+    childrenContainerBool = true;
     transitioner(
-      this.closest(".parents").nextElementSibling,
-      this.closest(".parents")
+      [childrenContainer, childrensContainersChildToShow],
+      parentsContainer
     );
   });
 });
 
 gsap.utils.toArray(".grand-child-link").forEach((grandChildLink) => {
   grandChildLink.addEventListener("click", function () {
+    grandchildrensContainersChildToShow = grandChildrenContainer.querySelector(
+      `[data-link="${this.parentElement.dataset.link}"]`
+    );
+    // document.querySelectorAll('[data-genre~="horror"]');
+    // currentContainer = childrenContainer;
+    // previousContainer = parentsContainer;
+    // subNavChildContainer = correspondingSubNavContainer;
+    childrenContainerBool = false;
+
     transitioner(
-      this.closest(".children").nextElementSibling,
-      this.closest(".children")
+      [grandChildrenContainer, grandchildrensContainersChildToShow],
+      childrenContainer
     );
   });
 });
 
 gsap.utils.toArray(".go-back").forEach((goBack) => {
   goBack.addEventListener("click", function () {
-    let goBackParent;
-    if (this.closest(".children")) goBackParent = this.closest(".children");
-    else {
-      goBackParent = this.closest(".grand-children");
-    }
-    transitioner(goBackParent.previousElementSibling, goBackParent, "-=100");
+    // if (this.closest(".children")) goBackParent = this.closest(".children");
+    // else {
+    //   goBackParent = this.closest(".grand-children");
+    // }
+    if (childrenContainerBool)
+      transitioner(
+        [parentsContainer, childrensContainersChildToShow],
+        childrenContainer,
+        "-=100"
+      );
+    else
+      transitioner(
+        [childrenContainer, grandchildrensContainersChildToShow],
+        grandChildrenContainer,
+        "-=100"
+      );
+    childrenContainerBool = true;
   });
 });
