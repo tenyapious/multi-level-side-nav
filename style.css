@@ -29,7 +29,7 @@ a {
 }
 
 .container-cover {
-  /* overflow: hidden; */
+  overflow: hidden;
   width: 100%;
   /* height: 100vh; */
   position: relative;
@@ -37,6 +37,7 @@ a {
 }
 
 .container-dark-cover {
+  overflow: hidden;
   display: none;
   width: 100%;
   height: 100%;
