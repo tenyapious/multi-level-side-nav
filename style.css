@@ -45,7 +45,6 @@ a {
 
 .nav {
   display: none;
-  border: 1px solid #000;
   position: absolute;
   top: 0;
   right: 100%;
@@ -56,7 +55,6 @@ a {
 .parents {
   width: 300px;
   /* height: 300px; */
-  border: 1px solid red;
   /* transition: transform 1s; */
   /* display: none; */
   /* transform: translateX(100%); */
@@ -68,7 +66,6 @@ a {
   position: absolute;
   right: 100%;
   top: 0;
-  border: 1px solid red;
   display: none;
   /* transition: transform 1s; */
   /* transform: translateX(100%); */
@@ -81,11 +78,25 @@ a {
   position: absolute;
   right: 100%;
   top: 0;
-  border: 1px solid red;
   display: none;
   /* transition: transform 1s; */
   /* transform: translateX(100%); */
 }
+
+.child,
+.grand-child {
+  border-right: 1px solid #ccc;
+  display: none;
+  height: 100vh;
+  background-color: #222;
+}
+
+/* .grand-child {
+  border-right: 1px solid #ccc;
+  display: none;
+  height: 100vh;
+  background-color: #222;
+} */
 
 /* ---------------------------------- */
 
