@@ -1,4 +1,12 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 * {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -39,17 +47,13 @@ a {
 }
 
 .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
 }
-
-/* .nav {
-  display: none;
-  width: 300px;
-  position: absolute;
-  top: 0;
-  right: 100%;
-} */
 
 .nav,
 .children,
@@ -66,14 +70,6 @@ a {
   overflow: auto;
 }
 
-/* .grand-children {
-  width: 300px;
-  position: absolute;
-  right: 100%;
-  top: 0;
-  display: none;
-} */
-
 .child,
 .grand-child {
   border-right: 1px solid #ccc;
@@ -83,13 +79,6 @@ a {
   overflow: auto;
 }
 
-/* .grand-child {
-  border-right: 1px solid #ccc;
-  display: none;
-  height: 100vh;
-  background-color: #222;
-} */
-
 /* ---------------------------------- */
 
 .nav-items {
@@ -97,7 +86,11 @@ a {
 }
 
 .nav-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
@@ -108,6 +101,8 @@ a {
   padding: 16px;
   display: block;
   color: #fff;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
   flex-grow: 1;
 }
 
@@ -127,9 +122,14 @@ a {
 }
 
 .go-back svg {
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
 .heading {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
   flex-direction: row-reverse;
 }
