@@ -92,6 +92,10 @@ a {
   background-color: #222;
 }
 
+.nav-items .nav-item:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+}
+
 .nav-item {
   display: -webkit-box;
   display: -ms-flexbox;
